@@ -10,7 +10,15 @@ require('dotenv').config()
 const port=process.env.PORT || 5000;
 
 //middle wire
-
+app.use(cors({
+  origin:[
+   'http://localhost:5173',
+   'https://bistro-resturent.surge.sh',
+    'https://bistro-boss-auth-71208.firebaseapp.com',
+    'https://bistro-boss-auth-71208.web.app'
+  ],
+  credentials:true
+}));
 app.use(express.json())
 app.use(cors())
 
